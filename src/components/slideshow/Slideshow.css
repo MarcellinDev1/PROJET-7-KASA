@@ -1,0 +1,97 @@
+/* =========================================
+   Conteneur principal du carrousel
+   ========================================= */
+.slideshow {
+  /* --- Positionnement --- */
+  position: relative;       /* Nécessaire pour que les flèches et le compteur se placent par rapport à ce conteneur */
+  
+  /* --- Dimensions --- */
+  width: 100%;
+  height: 415px;            /* Hauteur fixe sur desktop (conforme à la maquette) */
+  
+  /* --- Apparence --- */
+  border-radius: 25px;      /* Coins arrondis du carrousel */
+  overflow: hidden;         /* Coupe les images qui dépasseraient des coins arrondis */
+}
+
+/* =========================================
+   Image affichée
+   ========================================= */
+.slideshow__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* L'image remplit l'espace sans se déformer */
+  display: block;           /* Supprime l'espace vide sous l'image (évite ainsi le comportement inline par défaut) */
+}
+
+/* =========================================
+   Boutons de navigation (Flèches gauche/droite)
+   ========================================= */
+.slideshow__arrow {
+  /* --- Positionnement absolu au centre vertical --- */
+  position: absolute;
+  top: 50%;                 /* Place le haut de la flèche au milieu du conteneur */
+  transform: translateY(-50%); /* Remonte la flèche de la moitié de sa hauteur pour un centrage parfait */
+  
+  /* --- Apparence du bouton (on retire le style natif) --- */
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 80px;          /* Grande taille pour une bonne zone de clic */
+  line-height: 1;           /* Évite que la hauteur du texte ne décale la flèche */
+  padding: 0 20px;          /* Élargit la zone cliquable horizontalement */
+  
+  /* --- Interaction --- */
+  cursor: pointer;
+  user-select: none;        /* Empêche la sélection du caractère flèche lors de clics répétés */
+  transition: opacity 0.2s ease;
+}
+
+.slideshow__arrow:hover {
+  opacity: 0.7;             /* Retour visuel : la flèche devient légèrement transparente au survol */
+}
+
+/* Positionnement latéral spécifique */
+.slideshow__arrow--left {
+  left: 0;
+}
+
+.slideshow__arrow--right {
+  right: 0;
+}
+
+/* =========================================
+   Compteur d'images (ex: "1 / 4")
+   ========================================= */
+.slideshow__counter {
+  /* --- Positionnement absolu au centre horizontal, en bas --- */
+  position: absolute;
+  bottom: 20px;
+  left: 50%;                /* Place le bord gauche du compteur au milieu */
+  transform: translateX(-50%); /* Décale de la moitié de sa largeur pour un centrage parfait */
+  
+  /* --- Typographie --- */
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* =========================================
+   Version mobile (Tablettes et smartphones)
+   ========================================= */
+@media (max-width: 768px) {
+  .slideshow {
+    height: 255px;          /* Hauteur réduite sur mobile */
+    border-radius: 10px;    /* Arrondi plus discret */
+  }
+
+  .slideshow__arrow {
+    font-size: 40px;        /* Flèches plus petites */
+    padding: 0 10px;        /* Zone de clic plus étroite */
+  }
+
+  .slideshow__counter {
+    font-size: 14px;        /* Texte plus petit */
+    bottom: 10px;           /* Rapproché du bord inférieur */
+  }
+}

@@ -1,0 +1,106 @@
+/* =========================================
+   Conteneur principal du Collapse
+   ========================================= */
+.collapse {
+  margin-bottom: 30px;
+  border-radius: 5px;
+  overflow: hidden;         /* Empêche le contenu de dépasser des coins arrondis */
+}
+
+/* =========================================
+   En-tête (barre rouge cliquable)
+   ========================================= */
+.collapse__header {
+  /* --- Dimensions et espacement --- */
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  
+  /* --- Apparence --- */
+  background-color: #ff6060;
+  color: #ffffff;
+  border-radius: 5px;
+  font-family: inherit;     /* Force le bouton à utiliser la police Montserrat du body */
+  
+  /* --- Typographie --- */
+  font-size: 18px;
+  font-weight: 500;
+  
+  /* --- Mise en page (pour espacer le titre et la flèche) --- */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* --- Interaction --- */
+  cursor: pointer;          /* Change le curseur en main pour indiquer que c'est cliquable */
+}
+
+/* =========================================
+   Flèche (indicateur d'ouverture)
+   ========================================= */
+.collapse__arrow {
+  /* La transition est placée sur l'état de base pour animer dans les deux sens */
+  transition: transform 0.3s ease;
+  font-size: 24px;
+  line-height: 1;
+  /* État de base : flèche non tournée (0°), équivalent à transform: none */
+  transform: rotate(0deg);
+}
+
+.collapse__arrow.open {
+  /* État ouvert : flèche tournée de 180° */
+  transform: rotate(180deg);
+}
+
+/* =========================================
+   Contenu (panneau qui s'ouvre et se ferme)
+   ========================================= */
+.collapse__content {
+  background-color: #f6f6f6;
+  color: #ff6060;
+  font-size: 16px;
+  line-height: 1.5;
+  
+  /* --- Mécanique de l'animation de hauteur --- */
+  max-height: 0;            /* Hauteur nulle pour cacher le contenu au repos */
+  overflow: hidden;         /* Empêche le texte de déborder quand la hauteur est de 0 */
+  padding: 0 20px;          /* Padding horizontal maintenu, vertical à 0 pour ne rien afficher */
+  
+  /* Anime la hauteur ET le padding lors de l'ouverture/fermeture */
+  transition: max-height 0.3s ease, padding 0.3s ease;
+}
+
+.collapse__content.open {
+  /* On force une hauteur maximale suffisante pour afficher tout le texte */
+  max-height: 500px; 
+  /* On rétablit le padding vertical pour aérer le texte */
+  padding: 15px 20px;
+}
+
+/* =========================================
+   Version mobile (Tablettes et smartphones)
+   ========================================= */
+@media (max-width: 768px) {
+  .collapse {
+    margin-bottom: 20px;    /* Moins d'espace entre les collapses sur mobile */
+  }
+
+  .collapse__header {
+    font-size: 13px;        /* Texte du titre plus petit */
+    padding: 8px 15px;      /* Padding réduit */
+    border-radius: 5px;
+  }
+
+  .collapse__arrow {
+    font-size: 18px;        /* Flèche plus petite */
+  }
+
+  .collapse__content {
+    font-size: 12px;        /* Texte du contenu plus petit */
+    padding: 0 15px;        /* Padding horizontal réduit */
+  }
+
+  .collapse__content.open {
+    padding: 10px 15px;     /* Padding vertical réduit à l'ouverture */
+  }
+}

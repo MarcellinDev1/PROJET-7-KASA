@@ -1,0 +1,37 @@
+/* =========================================
+   Conteneur principal de la page À propos
+   ========================================= */
+.a-propos {
+  max-width: 1240px;        /* Aligne la largeur sur les autres pages */
+  margin: 0 auto;           /* Centre le contenu horizontalement */
+  padding: 0 20px;          /* Espacement de sécurité sur les côtés (petits écrans) */
+}
+
+/* =========================================
+   Section des collapses (accordéons)
+   ========================================= */
+.a-propos__collapses {
+  max-width: 1023px;        /* Largeur légèrement inférieure au conteneur parent (conforme à la maquette) */
+  margin: 40px auto;        /* Centre le bloc et ajoute une marge de 40px en haut et en bas */
+  padding: 0 20px;          /* Maintient l'espacement latéral */
+  
+  /* --- Mise en page des collapses --- */
+  display: flex;
+  flex-direction: column;   /* Empile les collapses les uns en dessous des autres */
+  gap: 30px;                /* Espace régulier entre chaque collapse */
+}
+
+/* =========================================
+   Version mobile (Tablettes et smartphones)
+   ========================================= */
+@media (max-width: 768px) {
+  .a-propos {
+    padding: 0 20px;
+  }
+
+  .a-propos__collapses {
+    margin: 20px auto;      /* Réduit les marges verticales sur mobile */
+    padding: 0 20px;
+    gap: 20px;              /* Réduit l'espace entre les collapses */
+  }
+}

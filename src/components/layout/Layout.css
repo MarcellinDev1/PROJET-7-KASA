@@ -1,0 +1,21 @@
+/* =========================================
+   Conteneur principal de l'application (Gabarit)
+   ========================================= */
+.layout {
+  /* --- Cadrage de la page --- */
+  max-width: 1240px;
+  margin: 0 auto;
+  
+  /* --- Mise en page globale (Sticky Footer) --- */
+  display: flex;
+  flex-direction: column;   /* Empile le Header, le Main et le Footer verticalement */
+  min-height: 100vh;        /* Le layout prend au moins toute la hauteur de l'écran */
+}
+
+/* =========================================
+   Zone de contenu principal (entre Header et Footer)
+   ========================================= */
+.layout main {
+  width: 100%;
+  flex: 1;                  /* Le main prend tout l'espace disponible, poussant le footer vers le bas */
+}

@@ -1,0 +1,179 @@
+/* =========================================
+   Conteneur principal de la page logement
+   ========================================= */
+.logement {
+  max-width: 1240px;        /* Aligne la largeur sur les autres pages */
+  margin: 0 auto;           /* Centre le contenu horizontalement */
+  padding: 0 20px;          /* Ajoute un espacement sur les côtés (sécurité sur petits écrans) */
+}
+
+/* =========================================
+   En-tête : Informations (gauche) + Hôte (droite)
+   ========================================= */
+.logement__header {
+  display: flex;
+  justify-content: space-between; /* Pousse les infos à gauche et l'hôte à droite */
+  align-items: flex-start;        /* Aligne les éléments sur le haut (car le titre peut être long) */
+  gap: 30px;                      /* Espace de sécurité entre les deux colonnes */
+  margin: 30px 0;                 /* Marge en haut et en bas du header */
+}
+
+/* Colonne de gauche (Titre, lieu, tags) */
+.logement__infos {
+  flex: 1;                        /* Prend tout l'espace disponible restant */
+}
+
+.logement__title {
+  color: #ff6060;
+  font-size: 36px;
+  font-weight: 500;
+  margin: 0 0 10px;               /* Annule la marge par défaut du h1 et ajoute 10px en bas */
+}
+
+.logement__location {
+  color: #000000;
+  font-size: 18px;
+  margin: 0 0 20px;
+}
+
+/* =========================================
+   Tags (Badges rouges)
+   ========================================= */
+.logement__tags {
+  display: flex;
+  flex-wrap: wrap;                /* Autorise les tags à passer à la ligne si l'écran est trop petit */
+  gap: 10px;                      /* Espace régulier entre chaque tag */
+  list-style: none;               /* Enlève les puces par défaut des listes */
+  padding: 0;
+  margin: 0;
+}
+
+.logement__tag {
+  background-color: #ff6060;
+  color: #ffffff;
+  font-size: 14px;
+  padding: 5px 15px;              /* Espace à l'intérieur du badge pour le rendre plus large */
+  border-radius: 10px;
+}
+
+/* =========================================
+   Bloc Hôte (Nom + Photo)
+   ========================================= */
+.logement__host {
+  display: flex;
+  flex-direction: column;         /* Empile le nom/photo au-dessus des étoiles */
+  align-items: flex-end;          /* Aligne tout le bloc à droite */
+  gap: 15px;
+}
+
+/* Ligne contenant le nom et la photo de l'hôte */
+.logement__host-infos {
+  display: flex;
+  align-items: center;            /* Centre la photo par rapport au nom */
+  gap: 10px;
+}
+
+.logement__host-name {
+  color: #ff6060;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0;
+  text-align: right;              /* Aligne le texte à droite car il est à côté de la photo */
+  max-width: 120px;               /* Force le nom à passer à la ligne s'il est trop long */
+}
+
+.logement__host-picture {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;             /* Transforme l'image carrée en cercle parfait */
+  object-fit: cover;              /* Recadre l'image pour qu'elle ne soit pas déformée */
+}
+
+/* =========================================
+   Système de notation (Étoiles)
+   ========================================= */
+.logement__rating {
+  display: flex;
+  gap: 5px;
+}
+
+.logement__star {
+  color: #e3e3e3;                 /* Couleur grise par défaut (étoile vide) */
+  font-size: 24px;
+}
+
+.logement__star--filled {
+  color: #ff6060;                 /* Couleur rouge (étoile pleine) */
+}
+
+/* =========================================
+   Section des descriptions (Collapses)
+   ========================================= */
+.logement__collapses {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Crée deux colonnes de largeur égale (50% / 50%) */
+  gap: 30px;                      /* Espace entre la colonne de gauche et de droite */
+  margin-bottom: 40px;            /* Sépare les collapses du footer */
+}
+
+.logement__equipments {
+  list-style: none;               /* Enlève les puces de la liste des équipements */
+  padding: 0;
+  margin: 0;
+}
+
+/* =========================================
+   Version mobile (Tablettes et smartphones)
+   ========================================= */
+@media (max-width: 768px) {
+  .logement__header {
+    flex-direction: column;       /* Empile les infos et l'hôte au lieu de les mettre côte à côte */
+    gap: 20px;
+    margin: 20px 0;
+  }
+
+  .logement__title {
+    font-size: 18px;              /* Titre plus petit */
+  }
+
+  .logement__location {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .logement__tag {
+    font-size: 10px;
+    padding: 3px 10px;
+    border-radius: 5px;
+  }
+
+  .logement__host {
+    flex-direction: row-reverse;  /* Inverse l'ordre : les étoiles passent à gauche, l'hôte à droite */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .logement__host-infos {
+    gap: 8px;
+  }
+
+  .logement__host-name {
+    font-size: 12px;
+    max-width: 80px;
+  }
+
+  .logement__host-picture {
+    width: 32px;                  /* Photo de l'hôte plus petite */
+    height: 32px;
+  }
+
+  .logement__star {
+    font-size: 15px;              /* Étoiles plus petites */
+  }
+
+  .logement__collapses {
+    grid-template-columns: 1fr;   /* Les collapses passent de 2 colonnes à 1 seule colonne */
+    gap: 20px;
+  }
+}

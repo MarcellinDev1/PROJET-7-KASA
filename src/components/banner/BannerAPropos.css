@@ -1,0 +1,38 @@
+/* =========================================
+   Bannière de la page "À propos"
+   ========================================= */
+
+.bannerAPropos {
+  /* --- Dimensions --- */
+  width: 100%;
+  height: 223px;
+
+  /* --- Apparence (image et forme) --- */
+  border-radius: 25px;
+  background-size: cover;      /* L'image remplit tout l'espace sans se déformer */
+  background-position: center; /* L'image reste centrée, même si elle est rognée */
+
+  /* --- Positionnement pour le voile et les débordements --- */
+  position: relative;          /* Nécessaire pour positionner le voile (::before) par-dessus */
+  overflow: hidden;            /* Coupe ce qui dépasse des coins arrondis (sécurité) */
+}
+
+/* =========================================
+   Voile sombre superposé à l'image
+   ========================================= */
+.bannerAPropos::before {
+  content: "";                 /* Obligatoire pour faire exister un pseudo-élément */
+  position: absolute;
+  inset: 0;                    /* Raccourci pour top, right, bottom, left à 0 (remplit le parent) */
+  background-color: rgba(0, 0, 0, 0.3); /* Noir avec 30% d'opacité pour assombrir l'image */
+}
+
+/* =========================================
+   Version mobile (Tablettes et smartphones)
+   ========================================= */
+@media (max-width: 768px) {
+  .bannerAPropos {
+    height: 111px;             /* Réduction de la hauteur pour le mobile */
+    border-radius: 10px;       /* Arrondi plus discret pour le mobile */
+  }
+}

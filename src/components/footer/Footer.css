@@ -1,0 +1,51 @@
+/* =========================================
+   Conteneur principal du pied de page
+   ========================================= */
+.footer {
+  /* --- Apparence --- */
+  background-color: #000000;
+  color: #ffffff;
+
+  /* --- Mise en page (centrage vertical des éléments) --- */
+  display: flex;
+  flex-direction: column;   /* Aligne le logo et le texte l'un en dessous de l'autre */
+  align-items: center;      /* Centre horizontalement le logo et le texte */
+  gap: 20px;                /* Espace régulier entre le logo et le texte */
+
+  /* --- Espacements --- */
+  padding: 40px 20px;
+  margin-top: 40px;         /* Sépare le footer du contenu principal de la page */
+}
+
+/* =========================================
+   Logo Kasa
+   ========================================= */
+.footer__logo {
+  height: 40px;             /* Taille fixe en hauteur pour garder les proportions */
+}
+
+/* =========================================
+   Texte de copyright
+   ========================================= */
+.footer__text {
+  font-size: 14px;
+  margin: 0;                /* Supprime la marge par défaut des balises <p> */
+}
+
+/* =========================================
+   Version mobile (Tablettes et smartphones)
+   ========================================= */
+@media (max-width: 768px) {
+  .footer {
+    padding: 30px 20px;     /* Moins de padding vertical sur mobile */
+    gap: 15px;              /* Espace réduit entre le logo et le texte */
+  }
+
+  .footer__logo {
+    height: 30px;           /* Logo plus petit sur mobile */
+  }
+
+  .footer__text {
+    font-size: 12px;        /* Texte plus petit sur mobile */
+  }
+}

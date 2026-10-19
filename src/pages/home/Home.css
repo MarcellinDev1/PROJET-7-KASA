@@ -1,0 +1,37 @@
+/* =========================================
+   Galerie de logements (Conteneur Grid)
+   ========================================= */
+.gallery {
+  /* --- Espacements et apparence --- */
+  margin-top: 40px;         /* Sépare la galerie de la bannière du haut */
+  padding: 50px;            /* Espace intérieur généreux (conforme à la maquette) */
+  background-color: #f6f6f6;/* Fond gris clair pour faire ressortir les cartes blanches */
+  border-radius: 25px;      /* Coins très arrondis */
+
+  /* --- Mise en page (Grille CSS) --- */
+  display: grid;
+  /* 
+    Crée 3 colonnes de largeur égale (1fr = 1 fraction de l'espace disponible).
+    repeat(3, 1fr) est un raccourci pour "1fr 1fr 1fr".
+  */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 30px;                /* Espace régulier entre les cartes (horizontal et vertical) */
+}
+
+/* =========================================
+   Version mobile (Tablettes et smartphones)
+   ========================================= */
+@media (max-width: 768px) {
+  .gallery {
+    margin-top: 20px;       /* Moins d'espace sous la bannière */
+    padding: 20px;          /* Padding réduit pour gagner de la place sur petit écran */
+    border-radius: 10px;    /* Arrondi plus discret */
+
+    /* 
+      On passe de 3 colonnes à 1 seule colonne. 
+      Les cartes s'empilent verticalement.
+    */
+    grid-template-columns: 1fr; 
+    gap: 20px;              /* Espacement légèrement réduit entre les cartes */
+  }
+}

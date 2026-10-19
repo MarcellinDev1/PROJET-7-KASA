@@ -1,0 +1,70 @@
+/* =========================================
+   Bannière de la page d'accueil
+   ========================================= */
+
+.bannerHome {
+  /* --- Dimensions --- */
+  width: 100%;
+  height: 223px;
+
+  /* --- Apparence (image et forme) --- */
+  border-radius: 25px;
+  background-size: cover;      /* L'image remplit tout l'espace sans se déformer */
+  background-position: center; /* L'image reste centrée, même si elle est rognée */
+  opacity: 1;
+
+  /* --- Mise en page (pour centrer le texte) --- */
+  display: flex;
+  align-items: center;         /* Centre le texte verticalement */
+  justify-content: center;     /* Centre le texte horizontalement */
+
+  /* --- Positionnement pour le voile --- */
+  position: relative;          /* Nécessaire pour que le voile (::before) se place par-dessus */
+  overflow: hidden;            /* Sécurité pour que l'image ne dépasse pas des coins arrondis */
+}
+
+/* =========================================
+   Voile sombre superposé à l'image
+   ========================================= */
+.bannerHome::before {
+  content: "";                 /* Obligatoire pour faire exister le pseudo-élément */
+  position: absolute;
+  inset: 0;                    /* Remplit tout le parent (top, right, bottom, left = 0) */
+  background-color: rgba(0, 0, 0, 0.3); /* Noir avec 30% d'opacité */
+}
+
+/* =========================================
+   Titre superposé (h1)
+   ========================================= */
+.bannerHome h1 {
+  /* --- Typographie --- */
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 48px;
+  line-height: 143%;
+  letter-spacing: 0;
+  text-align: center;
+  color: white;
+
+  /* --- Positionnement --- */
+  position: relative;          /* Nécessaire pour passer au-dessus du voile (::before) */
+  z-index: 1;                  /* Sécurité supplémentaire pour rester au-dessus */
+  margin: 0;
+}
+
+/* =========================================
+   Version mobile (Tablettes et smartphones)
+   ========================================= */
+@media (max-width: 768px) {
+  .bannerHome {
+    height: 111px;             /* Hauteur réduite sur mobile */
+    border-radius: 10px;       /* Arrondi plus discret */
+  }
+
+  .bannerHome h1 {
+    font-size: 24px;
+    line-height: 1.2;
+    text-align: left;          /* Sur mobile, la maquette aligne le texte à gauche */
+    padding: 20px;
+  }
+}

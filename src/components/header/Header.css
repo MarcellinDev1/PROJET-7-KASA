@@ -1,0 +1,78 @@
+/* =========================================
+   Conteneur principal de l'en-tête
+   ========================================= */
+.header {
+  /* --- Mise en page (logo à gauche, navigation à droite) --- */
+  display: flex;
+  justify-content: space-between; /* Pousse les éléments aux extrémités */
+  align-items: center;            /* Centre verticalement le logo et les liens */
+  padding: 20px 40px;
+  width: 100%; 
+  
+  /* --- Apparence et cadrage --- */
+  background-color: #ffffff;
+  max-width: 1240px;              /* Aligne la largeur du header sur celle du contenu de la page */
+  margin: 0 auto;                 /* Centre le header horizontalement */
+}
+
+/* =========================================
+   Logo Kasa
+   ========================================= */
+.header__logo-link {
+  display: flex;                  /* Permet d'aligner l'image correctement */
+  align-items: center;
+}
+
+.header__logo {
+  height: 47px;                   /* Taille fixe pour respecter la maquette */
+}
+
+/* =========================================
+   Navigation principale
+   ========================================= */
+.header__nav {
+  display: flex;
+  gap: 40px;                      /* Espace régulier entre "Accueil" et "À propos" */
+}
+
+/* =========================================
+   Liens de navigation
+   ========================================= */
+.header__link {
+  color: #ff6060;                 /* Couleur rouge Kasa */
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;          /* Retire le soulignement par défaut des liens */
+}
+
+/* État actif : appliqué par React Router sur la page en cours */
+.header__link.active {
+  text-decoration: underline;
+}
+
+/* État au survol de la souris */
+.header__link:hover {
+  text-decoration: underline;
+}
+
+/* =========================================
+   Version mobile (Tablettes et smartphones)
+   ========================================= */
+@media (max-width: 768px) {
+  .header {
+    padding: 15px 20px;           /* Padding réduit sur petit écran */
+  }
+
+  .header__logo {
+    height: 30px;                 /* Logo plus petit sur mobile */
+  }
+
+  .header__nav {
+    gap: 20px;                    /* Espacement réduit entre les liens */
+  }
+
+  .header__link {
+    font-size: 14px;              /* Texte plus petit */
+    text-transform: uppercase;    /* Force les liens en majuscules (conforme à la maquette mobile) */
+  }
+}

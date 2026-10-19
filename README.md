@@ -1,16 +1,48 @@
-# React + Vite
+# Kasa - Application de Location Immobilière entre Particuliers
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Application web de location de logements entre particuliers, réalisée dans le cadre du projet 7 de la formation **Développeur Web** d'OpenClassrooms.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Aperçu
 
-## React Compiler
+Kasa permet de :
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Parcourir une galerie de logements,
+- Consulter la fiche détaillée d'un logement (carrousel d'images, hôte, équipements, description),
+- Naviguer entre les pages Accueil, À propos, et gérer les erreurs 404.
 
-## Expanding the ESLint configuration
+## Prérequis
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- [Node.js](https://nodejs.org/) (v18 ou supérieur)
+- npm
+
+## Installation
+
+### 1. Clone le dépôt GitHub :
+
+````bash
+ git clone https://github.com/MarcellinDev1/PROJET-7-KASA```
+
+### 2. Accède au dossier du projet :
+cd PROJET-7-KASA
+
+### 3. Installer les dépendances
+npm install
+
+
+Lancement en développement
+npm run dev
+
+L'application sera accessible à l'adresse : http://localhost:5173 si ce port est libre.
+
+
+Technologies utilisées
+*React 19
+*Vite
+*React Router DOM
+*CSS (styles organisés par composant)
+
+
+
+````

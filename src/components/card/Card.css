@@ -1,0 +1,83 @@
+/* =========================================
+   Lien enveloppant la carte (accessibilité et navigation)
+   ========================================= */
+.card__link {
+  display: block;           /* Pour que le lien prenne toute la hauteur de la carte, et éviter que le clic
+                             ne fonctionnera que sur la ligne de texte mais pas sur toute l'image */
+  text-decoration: none;    /* Supprime le soulignement par défaut des liens. Evite que le texte à 
+                            l'intérieur de la carte puisse hériter du soulignement du lien sur certains navigateurs*/
+  color: inherit;           /* Le texte hérite de la couleur du parent (évite le bleu des liens) */
+}
+
+/* =========================================
+   Conteneur principal de la carte
+   ========================================= */
+.card {
+  position: relative;       /* Nécessaire pour positionner le titre et le dégradé (::after) */
+  height: 340px;            /* Hauteur fixe sur desktop (conforme à la maquette) */
+  border-radius: 10px;      /* Coins arrondis de la carte */
+  overflow: hidden;         /* Coupe l'image qui dépasse des coins arrondis */
+}
+
+/* =========================================
+   Image de couverture du logement
+   ========================================= */
+.card img {
+  width: 100%;              /* L'image prend toute la largeur du conteneur */
+  height: 100%;             /* L'image prend toute la hauteur du conteneur */
+  object-fit: cover;        /* L'image remplit l'espace sans se déformer (recadrage intelligent) */
+  display: block;           /* Supprime l'espace fantôme sous les images (évite donc le comportement inline par défaut).
+                             Permet ainsi à l'image de coller parfaitement au bord de son conteneur, sans espace */
+}
+
+/* =========================================
+   Dégradé sombre en bas de la carte (pour la lisibilité du titre)
+   ========================================= */
+.card::after {
+  content: "";              /* Obligatoire pour faire exister le pseudo-élément */
+  position: absolute;
+  inset: 0;                 /* Le dégradé couvre toute la carte */
+  
+  /* Dégradé du noir (en bas) vers le transparent (en haut) */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.6),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+/* =========================================
+   Titre du logement superposé à l'image
+   ========================================= */
+.card h2 {
+  /* --- Positionnement absolu (ancré en bas) --- */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 1;               /* Passe au-dessus du dégradé (::after) */
+
+  /* --- Dimensions --- */
+  width: 100%;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;   /* Inclut le padding dans la largeur de 100% et évite que le texte déborde du cadre*/
+
+  /* --- Typographie --- */
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* =========================================
+   Version mobile (Tablettes et smartphones)
+   ========================================= */
+@media (max-width: 768px) {
+  .card {
+    height: 255px;          /* Hauteur réduite sur mobile */
+  }
+
+  .card h2 {
+    font-size: 16px;        /* Texte plus petit sur mobile */
+    padding: 15px;          /* Padding réduit sur mobile */
+  }
+}
