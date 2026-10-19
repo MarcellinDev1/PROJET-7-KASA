@@ -17,17 +17,17 @@ Kasa permet de :
 - [Node.js](https://nodejs.org/) (v18 ou supérieur)
 - npm
 
-## Installation
+INSTALLATION
 
-### 1. Clone le dépôt GitHub :
+1.Clone le dépôt GitHub:
 
-````bash
- git clone https://github.com/MarcellinDev1/PROJET-7-KASA```
+```bash
+ git clone https://github.com/MarcellinDev1/PROJET-7-KASA
 
-### 2. Accède au dossier du projet :
+2. Accède au dossier du projet :
 cd PROJET-7-KASA
 
-### 3. Installer les dépendances
+3. Installer les dépendances
 npm install
 
 
@@ -45,4 +45,4 @@ Technologies utilisées
 
 
 
-````
+```
