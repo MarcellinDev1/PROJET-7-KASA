@@ -45,10 +45,20 @@ const router = createBrowserRouter([
 /**
  * Composant principal qui fournit le routeur à l'application React.
  * 
+ * La prop `future` avec `v7_startTransition: true` active le comportement 
+ * de la future version 7 de React Router (utilisation de `React.startTransition` 
+ * pour les mises à jour d'état). Cela supprime le warning affiché en console 
+ * et prépare l'application à la migration vers React Router v7.
+ * 
  * @returns {JSX.Element} Le fournisseur de contexte React Router.
  */
 function Router() {
-  return <RouterProvider router={router} />
+  return (
+    <RouterProvider 
+      router={router} 
+      future={{ v7_startTransition: true }} 
+    />
+  )
 }
 
 export default Router

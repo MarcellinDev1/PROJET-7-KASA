@@ -1,5 +1,5 @@
 import './BannerAPropos.css'
-import ImageBannerAPropos from '../../data/IMAGES/ImageBannerAPropos.jpg'
+import ImageBannerAPropos from '../../assets/images/ImageBannerAPropos.jpg'
 
 /**
  * Composant représentant la bannière de la page "À propos".

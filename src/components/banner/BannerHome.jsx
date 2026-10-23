@@ -1,5 +1,5 @@
 import './BannerHome.css'
-import ImageBanner from '../../data/IMAGES/ImageBannerHome.jpg'
+import ImageBanner from '../../assets/images/ImageBannerHome.jpg'
 
 /**
  * Composant représentant la bannière de la page d'accueil.

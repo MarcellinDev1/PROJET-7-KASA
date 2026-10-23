@@ -1,5 +1,5 @@
 import './Footer.css'
-import logoFooter from '../../data/IMAGES/LogoFooter.png'
+import logoFooter from '../../assets/images/LogoFooter.png'
 
 /**
  * Composant représentant le pied de page (Footer) de l'application.
